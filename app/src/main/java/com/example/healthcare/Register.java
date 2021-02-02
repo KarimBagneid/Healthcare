@@ -29,7 +29,7 @@ public class Register extends AppCompatActivity {
     private Context context;
     private Button buttonReg ;
     private TextView banner;
-    private EditText editTextFullName, editTextEmail, editTextPassword, editTextPhone, editTextAddress, editTextSpeciality;
+    private EditText editTextFullName, editTextEmail, editTextPassword, editTextPhone, editTextAddress, editTextSpeciality, editTextBirthDate;
     private Spinner spinnerProf;
     private ProgressBar progressBarMain, progressBarReg;
 
@@ -49,6 +49,7 @@ public class Register extends AppCompatActivity {
         editTextPhone = (EditText) findViewById(R.id.editTextPhone);
         editTextAddress = (EditText) findViewById(R.id.editTextAddress);
         editTextSpeciality = (EditText) findViewById(R.id.editTextSpeciality);
+        editTextBirthDate = (EditText) findViewById(R.id.editTextBirthDate);
 
         progressBarMain = (ProgressBar) findViewById(R.id.progressBarMain);
         progressBarReg = (ProgressBar) findViewById(R.id.progressBarReg);
@@ -78,6 +79,7 @@ public class Register extends AppCompatActivity {
         String Address = editTextAddress.getText().toString();
         String Title = spinnerProf.getSelectedItem().toString();
         String speciality = editTextSpeciality.getText().toString();
+        String BirthDate = editTextBirthDate.getText().toString();
 
         if (Full_Name.isEmpty()) {
             editTextFullName.setError("Full name required");
@@ -107,6 +109,11 @@ public class Register extends AppCompatActivity {
             editTextAddress.requestFocus();
             return;
         }
+        if (BirthDate.isEmpty()) {
+            editTextFullName.setError("Date of Birth required");
+            editTextFullName.requestFocus();
+            return;
+        }
         if(!Patterns.EMAIL_ADDRESS.matcher(Email).matches()){
             editTextEmail.setError("Please enter a valid Email address");
             editTextEmail.requestFocus();
@@ -127,7 +134,7 @@ public class Register extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            User user = new User(Full_Name, phone_Number, Email, Address, speciality,Title);
+                            User user = new User(Full_Name, phone_Number, Email, Address, speciality,Title, BirthDate);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())

@@ -14,6 +14,7 @@
         <activity android:name=".PharmActivity" />
         <activity android:name=".NurseActivity" />
         <activity android:name=".PhysicianActivity" />
+        <activity android:name=".PatientInfoActivity" />
         <activity android:name=".PatientActivity" />
         <activity android:name=".Register" />
         <activity android:name=".MainActivity">

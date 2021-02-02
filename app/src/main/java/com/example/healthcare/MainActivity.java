@@ -2,6 +2,7 @@ package com.example.healthcare;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
      private Button Login, Register;
      private ProgressBar progressBarMain;
     private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         LoginPassword = (EditText) findViewById(R.id.editTextPasswordLogin);
 
         progressBarMain = (ProgressBar) findViewById(R.id.progressBarMain);
+
 
 
     }
@@ -116,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
                                         startActivity(new Intent(context, PharmActivity.class));
                                         break;
                                     case "Patient":
-                                        startActivity(new Intent(context, PatientActivity.class));
+                                        startActivity(new Intent(context, PatientInfoActivity.class));
                                         break;
                                     default:
                                         break;

@@ -37,8 +37,8 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Name"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/nameTextView"
@@ -46,7 +46,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -54,9 +53,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:text="Age"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:text="Date of Birth"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/ageTextView"
@@ -64,7 +63,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -73,8 +71,8 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Address"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/addressTextView"
@@ -82,7 +80,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -91,8 +88,8 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Telephone Number"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/telephoneNumberTextView"
@@ -100,7 +97,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -109,8 +105,8 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="History"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/historyTextView"
@@ -118,7 +114,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -127,8 +122,8 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Supervising Doctors"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/doctorsTextView"
@@ -136,7 +131,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -145,8 +139,8 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text="Nurses"
-            android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/nursesTextView"
@@ -154,7 +148,6 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:text=""
-            android:textColor="@color/black"
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -164,7 +157,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:onClick="onRecordingsClick"
+        android:onClick="onPatientClick"
         android:text="Recordings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +170,7 @@
         android:id="@+id/ButtonPrescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onPrescriptionClick"
+        android:onClick="onPatientClick"
         android:text="prescription"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout2"

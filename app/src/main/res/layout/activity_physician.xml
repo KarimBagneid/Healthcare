@@ -4,4 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhysicianActivity"/>
+    tools:context=".PhysicianActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Banner"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Patients"
+            android:textAlignment="center"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/Patient1"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:onClick="onPatientClick"
+            android:text="Patient1"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Patient2"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:onClick="onPatientClick"
+            android:text="Patient2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/Patient3"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:onClick="onPatientClick"
+            android:text="Patient3"
+            android:textSize="20sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
