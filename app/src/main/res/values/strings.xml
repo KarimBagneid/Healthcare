@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Healthcare</string>
+    <string name="full_name">Full Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="speciality">speciality</string>
+    <string name="register">Register</string>
+    <string name="address">Address</string>
+
+    <string-array name="Title">
+        <item>Nurse</item>
+        <item>Physician</item>
+        <item>Pharmacist</item>
+        <item>Patient</item>
+    </string-array>
+</resources>
