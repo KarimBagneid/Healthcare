@@ -3,9 +3,11 @@ package com.example.healthcare;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -16,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class PhysicianActivity extends AppCompatActivity {
     private TextView Patient1, Patient2, Patient3;
     private DatabaseReference Ref;
@@ -25,16 +29,13 @@ public class PhysicianActivity extends AppCompatActivity {
     private  Context context;
     public String PatientID;
 
-
+    private ArrayList<Button> buttonArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_physician);
-
-        Patient1 = (TextView) findViewById(R.id.Patient1);
-        Patient2 = (TextView) findViewById(R.id.Patient2);
-        Patient3 = (TextView) findViewById(R.id.Patient3);
+        buttonArrayList=new ArrayList<Button>();
 
         Recordings = (Button) findViewById(R.id.ButtonRecordings);
         Prescription = (Button) findViewById(R.id.ButtonPrescription);
@@ -42,8 +43,33 @@ public class PhysicianActivity extends AppCompatActivity {
 
         context = this;
 
+        DatabaseReference r = fb.getReference("/Users/");
+        ArrayList<String> idList =new ArrayList<String>();
+        r.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("RestrictedApi")
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot d: snapshot.getChildren()) {
+                    boolean isPatient =false;
+                    if (d.hasChild("Title"))
+                            if(d.child("Title").getValue().equals("Patient"))
+                                isPatient =true;
+                    if (isPatient)
+                        idList.add(d.getValue().toString());
 
+                }
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        for (String s:idList) {
+            Button b =new Button(context);
+            b.setText("");
+            buttonArrayList.add(b);
+        }
     }
 
 
@@ -75,8 +101,8 @@ public class PhysicianActivity extends AppCompatActivity {
         history = (TextView) findViewById(R.id.historyTextView);
 
 
-        DatabaseReference r = fb.getReference("/Users/"+PatientID);
-        r.addValueEventListener(new ValueEventListener() {
+        DatabaseReference ro = fb.getReference("/Users/"+PatientID);
+        ro.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 

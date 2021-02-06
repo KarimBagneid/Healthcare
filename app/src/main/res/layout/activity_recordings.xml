@@ -8,8 +8,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="412dp"
+        android:layout_height="635dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,16 +19,17 @@
         app:layout_constraintVertical_bias="0.205">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="205dp"
+            android:layout_height="451dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/HeartRatetextView"
                 android:layout_width="205sp"
                 android:layout_height="75sp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Heart Rate"
+                android:textAlignment="center"
                 android:textSize="24sp" />
 
             <TextView
@@ -77,8 +78,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="100sp"
+            android:layout_height="451dp"
             android:orientation="vertical">
 
 
@@ -135,8 +136,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="105sp"
+            android:layout_height="449dp"
             android:orientation="vertical">
 
             <TextView
@@ -172,6 +173,7 @@
                 android:layout_height="75sp"
                 android:text="%"
                 android:gravity="center"
+                android:textAlignment="center"
                 android:textSize="30sp" />
 
             <TextView
@@ -179,7 +181,7 @@
                 android:layout_width="105sp"
                 android:layout_height="75sp"
                 android:gravity="center"
-                android:text="mmol/L"
+                android:text="C"
                 android:textAlignment="center"
                 android:textSize="18sp" />
 
@@ -188,7 +190,7 @@
                 android:layout_width="105sp"
                 android:layout_height="75sp"
                 android:gravity="center"
-                android:text="C"
+                android:text=" mmol/L"
                 android:textAlignment="center"
                 android:textSize="18sp" />
         </LinearLayout>
