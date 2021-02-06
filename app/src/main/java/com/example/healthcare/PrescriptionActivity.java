@@ -13,6 +13,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,11 +24,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class PrescriptionActivity extends AppCompatActivity {
-    public String PatientID;
+    public String PatientID, UserID;
     public EditText Diagnosis, Prescription;
     private Button UpdateButton;
     private DatabaseReference Ref;
     public FirebaseDatabase fb = FirebaseDatabase.getInstance();
+    private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,24 +43,29 @@ public class PrescriptionActivity extends AppCompatActivity {
         Prescription = (EditText) findViewById(R.id.MEDICINEedittext);
         UpdateButton = (Button) findViewById(R.id.UpdateButton);
 
+        UserID = user.getUid();
+
         Ref = fb.getReference().child("/Users/"+PatientID);
 
-        Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                String CurrentPrescription = snapshot.child("/Prescription").getValue().toString();
-                String CurrentDiagnosis = snapshot.child("/Diagnosis").getValue().toString();
 
-                Prescription.setText(CurrentPrescription);
-                Diagnosis.setText(CurrentDiagnosis);
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(PrescriptionActivity.this, "Could Not Access Database", Toast.LENGTH_SHORT).show();
+            Ref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String CurrentPrescription = snapshot.child("/Prescription").getValue().toString();
+                    String CurrentDiagnosis = snapshot.child("/Diagnosis").getValue().toString();
 
-            }
-        });
+                    Prescription.setText(CurrentPrescription);
+                    Diagnosis.setText(CurrentDiagnosis);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(PrescriptionActivity.this, "Could Not Access Database", Toast.LENGTH_SHORT).show();
+
+                }
+            });
+
 
     }
 
