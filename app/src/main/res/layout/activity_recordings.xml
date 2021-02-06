@@ -7,120 +7,190 @@
     tools:context=".RecordingsActivity">
 
     <LinearLayout
-        android:layout_width="417dp"
-        android:layout_height="649dp"
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.205">
 
         <LinearLayout
-            android:layout_width="205dp"
-            android:layout_height="450sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/HeartRatetextView"
                 android:layout_width="205sp"
                 android:layout_height="75sp"
+                android:gravity="center"
                 android:text="Heart Rate"
-                android:textAlignment="center"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/HeartVariabilitytextview"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
+                android:gravity="center"
                 android:text="Heart Variability"
-                android:textAlignment="center"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/BloodPressureviewtext"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
+                android:gravity="center"
                 android:text="Blood Pressure"
-                android:textAlignment="center"
                 android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/BloodOxygen"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
+                android:gravity="center"
                 android:text="Bloodoxygen"
-                android:textAlignment="center"
+
                 android:textSize="24sp" />
 
-
-            <TextView
-                android:id="@+id/TemperaturetextView"
-                android:layout_width="match_parent"
-                android:layout_height="75sp"
-                android:text="Temperature"
-                android:textAlignment="center"
-                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/bloodsugartextView"
                 android:layout_width="match_parent"
                 android:layout_height="75sp"
                 android:text="Blood Sugar"
-                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/TemperaturetextView"
+                android:layout_width="match_parent"
+                android:layout_height="75sp"
+                android:gravity="center"
+                android:text="Temperature"
                 android:textSize="24sp" />
 
 
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="450sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/heartrateNumberDecimal"
-                android:layout_width="205sp"
+
+            <TextView
+                android:id="@+id/TxtHeartRate"
+                android:layout_width="100sp"
                 android:layout_height="75sp"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:text=""
+                android:gravity="center"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/TxtHeartVariability"
+                android:layout_width="100sp"
+                android:layout_height="75sp"
+                android:gravity="center"
+                android:text=""
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/TxtBloodPressure"
+                android:layout_width="100sp"
+                android:layout_height="75sp"
+                android:text=""
+                android:gravity="center"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/TxtBloodOxygen"
+                android:layout_width="100sp"
+                android:layout_height="75sp"
+                android:gravity="center"
+                android:text=""
+                android:textAlignment="center" />
 
             <EditText
-                android:id="@+id/heartvariabilityNumberDecimal"
-                android:layout_width="match_parent"
+                android:id="@+id/EditTxtBloodSugar"
+                android:layout_width="100sp"
                 android:layout_height="75sp"
                 android:ems="10"
-                android:inputType="numberDecimal" />
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/bloodpressureNumberDecimal"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/TxtTemp"
+                android:layout_width="100sp"
+                android:gravity="center"
                 android:layout_height="75sp"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:text=""
+                android:textAlignment="center" />
 
-            <EditText
-                android:id="@+id/bloodoxygenNumberDecimal"
-                android:layout_width="match_parent"
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="105sp"
+                android:gravity="center"
                 android:layout_height="75sp"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:text="BPM"
+                android:textAlignment="center"
+                android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/tempNumberDecimal"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="105sp"
                 android:layout_height="75sp"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:gravity="center"
+                android:text="ms"
+                android:textAlignment="center"
+                android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/bloodsuggarNumberDecimal"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="105sp"
                 android:layout_height="75sp"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                android:gravity="center"
+                android:text="mmHg"
+                android:textAlignment="center"
+                android:textSize="18sp" />
 
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="105sp"
+                android:layout_height="75sp"
+                android:text="%"
+                android:gravity="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="105sp"
+                android:layout_height="75sp"
+                android:gravity="center"
+                android:text="mmol/L"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="105sp"
+                android:layout_height="75sp"
+                android:gravity="center"
+                android:text="C"
+                android:textAlignment="center"
+                android:textSize="18sp" />
         </LinearLayout>
 
     </LinearLayout>
