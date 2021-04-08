@@ -23,7 +23,7 @@ public class PatientActivity extends AppCompatActivity {
         setContentView(R.layout.activity_patient);
 
         Recordings = (Button) findViewById(R.id.ButtonRecordings);
-        Prescription = (Button) findViewById(R.id.ButtonPrescription);
+
         name = (TextView) findViewById(R.id.nameLabel);
         age = (TextView) findViewById(R.id.ageLabel);
         address = (TextView) findViewById(R.id.addressLabel);
@@ -44,11 +44,5 @@ public class PatientActivity extends AppCompatActivity {
         }
 
     }
-    public void onPrescriptionClick (View view){
-        switch (view.getId()){
-            case R.id.ButtonPrescription:
-                startActivity(new Intent(context, PrescriptionActivity.class));
-                break;
-        }
-    }
+
 }

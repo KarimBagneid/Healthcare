@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -28,9 +29,9 @@ public class PhysicianActivity extends AppCompatActivity {
     public TextView name, age , address, phone, superdoctor ,nurses, history;
     private  Context context;
     public String PatientID;
-
+    LinearLayout lolo;
     private ArrayList<Button> buttonArrayList;
-
+    private Button buttonR,buttonP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +39,11 @@ public class PhysicianActivity extends AppCompatActivity {
         buttonArrayList=new ArrayList<Button>();
 
         Recordings = (Button) findViewById(R.id.ButtonRecordings);
-        Prescription = (Button) findViewById(R.id.ButtonPrescription);
+
 
 
         context = this;
-
+        lolo = findViewById(R.id.Lolo);
         DatabaseReference r = fb.getReference("/Users/");
         ArrayList<String> idList =new ArrayList<String>();
         r.addValueEventListener(new ValueEventListener() {
@@ -50,13 +51,22 @@ public class PhysicianActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot d: snapshot.getChildren()) {
-                    boolean isPatient =false;
+                    boolean isPatient = false;
                     if (d.hasChild("Title"))
-                            if(d.child("Title").getValue().equals("Patient"))
-                                isPatient =true;
-                    if (isPatient)
-                        idList.add(d.getValue().toString());
-
+                        if (d.child("Title").getValue().equals("Patient"))
+                            isPatient = true;
+                    if (isPatient) {
+                        idList.add(d.getKey());
+                        Button b =new Button(context);
+                        b.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                onPatientClick(d.getKey());
+                            }
+                        });
+                        b.setText(d.child("FullName").getValue().toString());
+                        lolo.addView(b);
+                    }
                 }
             }
 
@@ -65,33 +75,17 @@ public class PhysicianActivity extends AppCompatActivity {
 
             }
         });
-        for (String s:idList) {
-            Button b =new Button(context);
-            b.setText("");
-            buttonArrayList.add(b);
-        }
     }
 
 
-    public void onPatientClick (View view){
+    public void onPatientClick (String p){
+        PatientID = p;
+
         setContentView(R.layout.activity_patient);
 
-
         Recordings = (Button) findViewById(R.id.ButtonRecordings);
-        Prescription = (Button) findViewById(R.id.ButtonPrescription);
 
-        switch (view.getId()){
-            case R.id.Patient1:
-                PatientID = "ezrWajYRenTaFQMVzjlhSUe4GDJ2";
-                break;
-            case R.id.Patient2:
-                PatientID = "codZBHCMocPkSGgOOBd2ywF46lG3";
-                break;
-            case R.id.Patient3:
-                PatientID = "TSsQmFOt2pN03tt8P9XYyj5mxjh1";
-                break;
 
-        }
         name = (TextView) findViewById(R.id.nameTextView);
         age = (TextView) findViewById(R.id.ageTextView);
         address = (TextView) findViewById(R.id.addressTextView);
@@ -100,6 +94,7 @@ public class PhysicianActivity extends AppCompatActivity {
         nurses = (TextView) findViewById(R.id.nursesTextView);
         history = (TextView) findViewById(R.id.historyTextView);
 
+        Log.d("koloxxxxxx",PatientID);
 
         DatabaseReference ro = fb.getReference("/Users/"+PatientID);
         ro.addValueEventListener(new ValueEventListener() {
@@ -110,7 +105,11 @@ public class PhysicianActivity extends AppCompatActivity {
                 String Age = snapshot.child("/BirthDate").getValue().toString();
                 String Address = snapshot.child("/Address").getValue().toString();
                 String Phone = snapshot.child("/Phone").getValue().toString();
-                String History = snapshot.child("/History").getValue().toString();
+                String History;
+                if (snapshot.hasChild("/History"))
+                    History = snapshot.child("/History").getValue().toString();
+                else
+                    History ="";
 
                 name.setText(Name);
                 age.setText(Age);
@@ -124,21 +123,25 @@ public class PhysicianActivity extends AppCompatActivity {
 
             }
         });
-        switch (view.getId()){
-            case(R.id.ButtonRecordings):
+
+
+
+        buttonR =findViewById(R.id.ButtonRecordings);
+        buttonR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
                 Intent intent = (new Intent(context, RecordingsActivity.class));
                 intent.putExtra("PatientID", PatientID);
                 startActivity(intent);
-                break;
-            case(R.id.ButtonPrescription):
-                Intent intent2 = (new Intent(context, PrescriptionActivity.class));
-                intent2.putExtra("PatientID", PatientID);
-                startActivity(intent2);
-                break;
-        }
+            }
+        });
+
 
 
     }
+
+
 
 
 }

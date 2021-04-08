@@ -52,8 +52,18 @@ public class PrescriptionActivity extends AppCompatActivity {
             Ref.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    String CurrentPrescription = snapshot.child("/Prescription").getValue().toString();
-                    String CurrentDiagnosis = snapshot.child("/Diagnosis").getValue().toString();
+                    String CurrentPrescription;
+
+                    if (snapshot.hasChild("/Prescription"))
+                        CurrentPrescription = snapshot.child("/Prescription").getValue().toString();
+                    else
+                        CurrentPrescription ="";
+
+                    String CurrentDiagnosis;
+                    if (snapshot.hasChild("/Diagnosis"))
+                        CurrentDiagnosis = snapshot.child("/Diagnosis").getValue().toString();
+                    else
+                        CurrentDiagnosis ="";
 
                     Prescription.setText(CurrentPrescription);
                     Diagnosis.setText(CurrentDiagnosis);
@@ -68,6 +78,8 @@ public class PrescriptionActivity extends AppCompatActivity {
 
 
     }
+
+
 
     public void onUpdateClick (View view){
         switch(view.getId()){

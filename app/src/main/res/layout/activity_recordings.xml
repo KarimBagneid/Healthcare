@@ -6,197 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".RecordingsActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="412dp"
-        android:layout_height="635dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.205">
-
-        <LinearLayout
-            android:layout_width="205dp"
-            android:layout_height="451dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/HeartRatetextView"
-                android:layout_width="205sp"
-                android:layout_height="75sp"
-                android:gravity="center_vertical"
-                android:text="Heart Rate"
-                android:textAlignment="center"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/HeartVariabilitytextview"
-                android:layout_width="match_parent"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text="Heart Variability"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/BloodPressureviewtext"
-                android:layout_width="match_parent"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text="Blood Pressure"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/BloodOxygen"
-                android:layout_width="match_parent"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text="Bloodoxygen"
-
-                android:textSize="24sp" />
-
-
-            <TextView
-                android:id="@+id/bloodsugartextView"
-                android:layout_width="match_parent"
-                android:layout_height="75sp"
-                android:text="Blood Sugar"
-                android:gravity="center"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/TemperaturetextView"
-                android:layout_width="match_parent"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text="Temperature"
-                android:textSize="24sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="100sp"
-            android:layout_height="451dp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/TxtHeartRate"
-                android:layout_width="100sp"
-                android:layout_height="75sp"
-                android:text=""
-                android:gravity="center"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/TxtHeartVariability"
-                android:layout_width="100sp"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text=""
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/TxtBloodPressure"
-                android:layout_width="100sp"
-                android:layout_height="75sp"
-                android:text=""
-                android:gravity="center"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/TxtBloodOxygen"
-                android:layout_width="100sp"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text=""
-                android:textAlignment="center" />
-
-            <EditText
-                android:id="@+id/EditTxtBloodSugar"
-                android:layout_width="100sp"
-                android:layout_height="75sp"
-                android:ems="10"
-                android:gravity="center"
-                android:inputType="numberDecimal"
-                android:textAlignment="center" />
-
-            <TextView
-                android:id="@+id/TxtTemp"
-                android:layout_width="100sp"
-                android:gravity="center"
-                android:layout_height="75sp"
-                android:text=""
-                android:textAlignment="center" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="105sp"
-            android:layout_height="449dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="105sp"
-                android:gravity="center"
-                android:layout_height="75sp"
-                android:text="BPM"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="105sp"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text="ms"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="105sp"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text="mmHg"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="105sp"
-                android:layout_height="75sp"
-                android:text="%"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="105sp"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text="C"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView12"
-                android:layout_width="105sp"
-                android:layout_height="75sp"
-                android:gravity="center"
-                android:text=" mmol/L"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-    </LinearLayout>
-
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
@@ -209,6 +18,310 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.049" />
+        app:layout_constraintVertical_bias="0.049" /><![CDATA[
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrescriptionActivity">
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="412dp"
+        android:layout_height="641dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableRow
+            android:id="@+id/HR"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/HRname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Heart rate :"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/HRno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="66"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/HRunit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="BPM"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/HV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/HVname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Heart Variability :"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/HVno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="350"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/HVunit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="ms"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/BP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/BPname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Blood Pressure :"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/BPno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="150/50"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/BPunit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="mmHg"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/SPo2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/SPo2name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Blood Oxygen (SPO2) :"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/SPo2no"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="95"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/SPo2unit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="%"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/BS"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/BSname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Blood Suger :"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/BSno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="250"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/BSunit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="mm/mol"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/Temp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/Tempname"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Body Temprature"
+                android:textAlignment="viewStart"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tempno"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="37.5"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Tempunit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="C"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </TableRow>
+    </TableLayout>
+
+    <EditText
+        android:id="@+id/MEDICINEedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.751" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PRESCRIPTION"
+        app:layout_constraintBottom_toTopOf="@+id/MEDICINEedittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diagnosisedittext" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="320dp"
+        android:layout_marginEnd="159dp"
+        android:text="THE DIAGNOSIS"
+        app:layout_constraintBottom_toTopOf="@+id/diagnosisedittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/diagnosisedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="316dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/MEDICINEedittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/UpdateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onUpdateClick"
+        android:text="Update"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MEDICINEedittext" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -27,14 +28,23 @@ public class PatientInfoActivity extends AppCompatActivity {
     private DatabaseReference Ref;
     private FirebaseDatabase fb = FirebaseDatabase.getInstance();
     private FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    private Button buttonR,buttonP;
+    public String PatientID, damdam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient);
 
+        PatientID = user.getUid();
+
+
+        damdam = getIntent().getStringExtra("PatientID");
+        Log.d("koloxxxxxx",PatientID);
+
+
         Recordings = (Button) findViewById(R.id.ButtonRecordings);
-        Prescription = (Button) findViewById(R.id.ButtonPrescription);
+
         name = (TextView) findViewById(R.id.nameTextView);
         age = (TextView) findViewById(R.id.ageTextView);
         address = (TextView) findViewById(R.id.addressTextView);
@@ -42,6 +52,7 @@ public class PatientInfoActivity extends AppCompatActivity {
         superdoctor = (TextView) findViewById(R.id.doctorsTextView);
         nurses = (TextView) findViewById(R.id.nursesTextView);
         history = (TextView) findViewById(R.id.historyTextView);
+
 
 
         DatabaseReference r =fb.getReference("/Users/"+user.getUid());
@@ -53,7 +64,12 @@ public class PatientInfoActivity extends AppCompatActivity {
                 String Age = snapshot.child("/BirthDate").getValue().toString();
                 String Address = snapshot.child("/Address").getValue().toString();
                 String Phone = snapshot.child("/Phone").getValue().toString();
-                String History = snapshot.child("/History").getValue().toString();
+                String History;
+                if (snapshot.hasChild("/History"))
+                    History = snapshot.child("/History").getValue().toString();
+                else
+                    History ="";
+
 
                 name.setText(Name);
                 age.setText(Age);
@@ -79,16 +95,27 @@ public class PatientInfoActivity extends AppCompatActivity {
 
 
     }
-    public void onPatientClick (View view){
-        switch (view.getId()){
-            case R.id.ButtonRecordings:
-                startActivity(new Intent(context, RecordingsActivity.class));
-                break;
-            case R.id.ButtonPrescription:
-                startActivity(new Intent(context, PrescriptionActivity.class));
-                break;
-        }
-        }
+
+    public void onPatientClick (String p){
+
+
+        setContentView(R.layout.activity_patient);
+
+
+
+        buttonR =findViewById(R.id.ButtonRecordings);
+        buttonR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = (new Intent(context, RecordingsActivity.class));
+                intent.putExtra("PatientID", PatientID);
+                startActivity(intent);
+            }
+        });
+
+
+    }
 
     }
 
